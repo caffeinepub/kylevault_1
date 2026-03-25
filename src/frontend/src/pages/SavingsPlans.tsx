@@ -13,7 +13,7 @@ const plans = [
     title: "Daily Savings Plan",
     amountRange: "$10 – $100",
     frequency: "per day",
-    duration: "30-day cycle",
+    duration: "1-day duration",
     progress: 45,
     saved: "$135.00",
     goal: "$300.00",
@@ -28,9 +28,9 @@ const plans = [
     title: "Weekly Savings Plan",
     amountRange: "$50 – $500",
     frequency: "per week",
-    duration: "12-week cycle",
-    progress: 68,
-    saved: "$408.00",
+    duration: "7-day duration",
+    progress: 62,
+    saved: "$372.00",
     goal: "$600.00",
     badge: "Popular",
     badgeColor: "default" as const,
@@ -41,11 +41,11 @@ const plans = [
     id: 3,
     icon: Lock,
     title: "30-Day Locked Savings",
-    amountRange: "$500 locked",
+    amountRange: "$500 min",
     frequency: "one-time",
-    duration: "30 days locked",
-    progress: 90,
-    saved: "$450.00",
+    duration: "Locked 30 days",
+    progress: 28,
+    saved: "$140.00",
     goal: "$500.00",
     badge: "High Yield",
     badgeColor: "outline" as const,
@@ -61,9 +61,18 @@ export function SavingsPlans() {
     <AppShell>
       <div className="space-y-6 animate-fade-in pb-16">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Savings Plans</h1>
+          <p
+            className="text-xs font-semibold uppercase tracking-widest mb-1"
+            style={{ color: "oklch(var(--success))" }}
+          >
+            Savings Plans
+          </p>
+          <h1 className="text-2xl font-bold text-foreground">
+            Choose Your Plan
+          </h1>
           <p className="text-sm text-muted-foreground mt-0.5">
-            Choose a plan that fits your financial goals. All amounts in USD.
+            Flexible plans designed to fit your financial goals. All amounts in
+            USD.
           </p>
         </div>
 
@@ -74,7 +83,7 @@ export function SavingsPlans() {
             return (
               <div
                 key={plan.id}
-                className="relative rounded-2xl border shadow-card p-6 space-y-5 hover:shadow-card-hover transition-all flex flex-col"
+                className="relative rounded-2xl border shadow-card p-6 space-y-5 hover:shadow-card-hover transition-all hover:-translate-y-1 flex flex-col"
                 style={{
                   backgroundColor: isPopular ? "oklch(var(--navy))" : "white",
                   borderColor: isPopular
@@ -86,7 +95,7 @@ export function SavingsPlans() {
                 {isPopular && (
                   <div
                     className="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-4 py-1 rounded-full"
-                    style={{ backgroundColor: "oklch(var(--primary))" }}
+                    style={{ backgroundColor: "oklch(var(--success))" }}
                   >
                     Most Popular
                   </div>
@@ -96,7 +105,7 @@ export function SavingsPlans() {
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{
                       backgroundColor: isPopular
-                        ? "oklch(var(--white) / 0.15)"
+                        ? "rgba(255,255,255,0.15)"
                         : "oklch(var(--navy) / 0.08)",
                     }}
                   >
@@ -121,11 +130,7 @@ export function SavingsPlans() {
                   </h2>
                   <p
                     className="text-xs font-medium"
-                    style={{
-                      color: isPopular
-                        ? "oklch(var(--primary))"
-                        : "oklch(var(--primary))",
-                    }}
+                    style={{ color: "oklch(var(--success))" }}
                   >
                     {plan.highlight}
                   </p>
@@ -133,7 +138,7 @@ export function SavingsPlans() {
                     className="text-sm leading-relaxed"
                     style={{
                       color: isPopular
-                        ? "white/70"
+                        ? "rgba(255,255,255,0.7)"
                         : "oklch(var(--muted-foreground))",
                     }}
                   >
@@ -146,15 +151,15 @@ export function SavingsPlans() {
                     className="rounded-xl p-3"
                     style={{
                       backgroundColor: isPopular
-                        ? "oklch(var(--white) / 0.1)"
-                        : "oklch(var(--muted) / 0.5)",
+                        ? "rgba(255,255,255,0.1)"
+                        : "oklch(var(--muted) / 0.6)",
                     }}
                   >
                     <p
                       className="text-xs"
                       style={{
                         color: isPopular
-                          ? "white/60"
+                          ? "rgba(255,255,255,0.6)"
                           : "oklch(var(--muted-foreground))",
                       }}
                     >
@@ -167,10 +172,7 @@ export function SavingsPlans() {
                       }}
                     >
                       {plan.amountRange}{" "}
-                      <span
-                        className="text-xs font-normal"
-                        style={{ opacity: 0.65 }}
-                      >
+                      <span className="text-xs font-normal opacity-65">
                         {plan.frequency}
                       </span>
                     </p>
@@ -179,15 +181,15 @@ export function SavingsPlans() {
                     className="rounded-xl p-3"
                     style={{
                       backgroundColor: isPopular
-                        ? "oklch(var(--white) / 0.1)"
-                        : "oklch(var(--muted) / 0.5)",
+                        ? "rgba(255,255,255,0.1)"
+                        : "oklch(var(--muted) / 0.6)",
                     }}
                   >
                     <p
                       className="text-xs"
                       style={{
                         color: isPopular
-                          ? "white/60"
+                          ? "rgba(255,255,255,0.6)"
                           : "oklch(var(--muted-foreground))",
                       }}
                     >
@@ -216,7 +218,7 @@ export function SavingsPlans() {
                   style={
                     isPopular
                       ? {
-                          backgroundColor: "oklch(var(--primary))",
+                          backgroundColor: "oklch(var(--success))",
                           color: "white",
                         }
                       : {

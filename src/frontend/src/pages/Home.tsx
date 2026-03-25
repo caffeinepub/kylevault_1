@@ -19,16 +19,16 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 
-const trustItems = [
+const trustBadges = [
   {
     icon: Shield,
-    title: "Funds Protected",
-    desc: "Your funds are protected with secure payment systems",
+    title: "Secure Infrastructure",
+    desc: "Built on secure payment infrastructure",
   },
   {
     icon: Eye,
-    title: "Full Transparency",
-    desc: "Transparent savings tracking — no surprises",
+    title: "Transparent Tracking",
+    desc: "Full visibility into every transaction",
   },
   {
     icon: Tag,
@@ -39,6 +39,24 @@ const trustItems = [
     icon: Lock,
     title: "Modern Security",
     desc: "Built with modern security standards",
+  },
+];
+
+const securityCards = [
+  {
+    icon: Shield,
+    title: "Bank-Grade Security",
+    desc: "Your savings data is protected with enterprise-level encryption and multi-layer security protocols.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Trusted by Design",
+    desc: "Every feature is built around user trust — transparent records, no hidden fees, and clear reporting.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Reliable Tracking",
+    desc: "Real-time progress tracking and accurate savings history give you full control of your financial journey.",
   },
 ];
 
@@ -76,12 +94,12 @@ const features = [
   },
   {
     icon: Wallet,
-    title: "Easy Withdrawal System",
+    title: "Easy Withdrawals",
     desc: "Unlock funds from flexible plans instantly. No hidden fees, no complicated processes.",
   },
   {
     icon: ShieldCheck,
-    title: "Clean User Dashboard",
+    title: "Clean Dashboard Experience",
     desc: "Your personalized dashboard shows balance, plans, history, and progress in one clean view.",
   },
 ];
@@ -90,7 +108,7 @@ const miniTxns = [
   {
     id: "t1",
     label: "Deposit",
-    amt: "+$500.00",
+    amt: "+$800.00",
     date: "Today",
     positive: true,
   },
@@ -104,7 +122,7 @@ const miniTxns = [
   {
     id: "t3",
     label: "Interest Earned",
-    amt: "+$12.50",
+    amt: "+$18.50",
     date: "Mar 20",
     positive: true,
   },
@@ -127,7 +145,7 @@ function DashboardIllustration() {
               className="text-3xl font-extrabold"
               style={{ color: "oklch(var(--navy))" }}
             >
-              $2,450.00
+              $3,200.00
             </p>
           </div>
           <div
@@ -139,12 +157,14 @@ function DashboardIllustration() {
         </div>
         <div className="space-y-1.5">
           <div className="flex justify-between text-xs">
-            <span className="text-muted-foreground">Goal: $5,000.00</span>
+            <span className="text-muted-foreground">
+              Savings Goal: $5,000.00
+            </span>
             <span
               className="font-semibold"
-              style={{ color: "oklch(var(--primary))" }}
+              style={{ color: "oklch(var(--success))" }}
             >
-              68%
+              65%
             </span>
           </div>
           <div
@@ -153,7 +173,7 @@ function DashboardIllustration() {
           >
             <div
               className="h-full rounded-full transition-all duration-700"
-              style={{ width: "68%", backgroundColor: "oklch(var(--navy))" }}
+              style={{ width: "65%", backgroundColor: "oklch(var(--navy))" }}
             />
           </div>
         </div>
@@ -186,7 +206,7 @@ function DashboardIllustration() {
           <button
             type="button"
             className="text-xs font-semibold py-2 rounded-full text-white"
-            style={{ backgroundColor: "oklch(var(--primary))" }}
+            style={{ backgroundColor: "oklch(var(--navy))" }}
           >
             Deposit
           </button>
@@ -201,9 +221,9 @@ function DashboardIllustration() {
       {/* Floating badge */}
       <div
         className="absolute -top-3 -right-3 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-cta"
-        style={{ backgroundColor: "oklch(var(--primary))" }}
+        style={{ backgroundColor: "oklch(var(--success))" }}
       >
-        Live Preview
+        ✓ Secure
       </div>
       {/* Small decorative card */}
       <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-card px-4 py-2.5 flex items-center gap-2">
@@ -213,9 +233,9 @@ function DashboardIllustration() {
             className="text-xs font-semibold"
             style={{ color: "oklch(var(--navy))" }}
           >
-            Weekly Plan
+            30-Day Locked
           </p>
-          <p className="text-xs text-muted-foreground">Active</p>
+          <p className="text-xs text-muted-foreground">Active Plan</p>
         </div>
       </div>
     </motion.div>
@@ -224,15 +244,56 @@ function DashboardIllustration() {
 
 export function Home() {
   return (
-    <div className="min-h-screen flex flex-col pb-10">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Hero — deep navy */}
-      <section
-        className="px-4 sm:px-6 py-16 sm:py-24"
-        style={{ backgroundColor: "oklch(var(--navy))" }}
-      >
-        <div className="max-w-6xl mx-auto">
+      {/* Hero — pale gray bg per design spec */}
+      <section className="px-4 sm:px-6 py-16 sm:py-24 bg-background relative overflow-hidden">
+        {/* Faint wave / abstract background shapes */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        >
+          <svg
+            aria-hidden="true"
+            className="absolute top-0 right-0 w-2/3 opacity-[0.04]"
+            viewBox="0 0 600 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse
+              cx="400"
+              cy="-50"
+              rx="300"
+              ry="300"
+              fill="oklch(0.2 0.065 255)"
+            />
+            <ellipse
+              cx="550"
+              cy="200"
+              rx="200"
+              ry="200"
+              fill="oklch(0.2 0.065 255)"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            className="absolute bottom-0 left-0 w-1/2 opacity-[0.04]"
+            viewBox="0 0 400 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse
+              cx="0"
+              cy="300"
+              rx="250"
+              ry="250"
+              fill="oklch(0.2 0.065 255)"
+            />
+          </svg>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left text */}
             <motion.div
@@ -241,66 +302,95 @@ export function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55 }}
             >
-              <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium border border-white/20 text-white/70">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                Digital Savings Platform · USD
+              <div
+                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
+                style={{
+                  backgroundColor: "oklch(var(--navy) / 0.08)",
+                  color: "oklch(var(--navy))",
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: "oklch(var(--success))" }}
+                />
+                Trusted Worldwide
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+                style={{ color: "oklch(var(--foreground))" }}
+              >
                 Secure Your Money.
                 <br />
-                <span style={{ color: "oklch(var(--primary))" }}>
-                  Build Your Future.
+                <span style={{ color: "oklch(var(--navy))" }}>
+                  Grow with Confidence.
                 </span>
               </h1>
-              <p className="text-white/70 text-lg leading-relaxed max-w-lg">
-                KyleVault is a modern digital savings platform designed to help
-                you save consistently and securely with full transparency.
+              <p
+                className="text-lg leading-relaxed max-w-lg"
+                style={{ color: "oklch(var(--muted-foreground))" }}
+              >
+                MTVault is a modern savings platform designed to help you build
+                financial discipline with security, transparency, and ease.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link to="/signup">
-                  <Button
-                    size="lg"
-                    className="rounded-full gap-2 w-full sm:w-auto text-white shadow-cta font-semibold px-8"
-                    style={{ backgroundColor: "oklch(var(--primary))" }}
-                    data-ocid="hero.primary_button"
-                  >
-                    Start Saving <ArrowRight size={16} />
-                  </Button>
-                </Link>
                 <Link to="/dashboard">
                   <Button
                     size="lg"
+                    className="rounded-full gap-2 w-full sm:w-auto text-white shadow-cta font-semibold px-8"
+                    style={{ backgroundColor: "oklch(var(--navy))" }}
+                    data-ocid="hero.primary_button"
+                  >
+                    Get Started <ArrowRight size={16} />
+                  </Button>
+                </Link>
+                <Link to="/login">
+                  <Button
+                    size="lg"
                     variant="outline"
-                    className="rounded-full w-full sm:w-auto border-white/30 text-white hover:bg-white/10 font-semibold px-8"
-                    style={{ backgroundColor: "transparent" }}
+                    className="rounded-full w-full sm:w-auto font-semibold px-8"
+                    style={{
+                      borderColor: "oklch(var(--navy) / 0.3)",
+                      color: "oklch(var(--navy))",
+                    }}
                     data-ocid="hero.secondary_button"
                   >
-                    View Dashboard
+                    Login
                   </Button>
                 </Link>
               </div>
+              <p
+                className="text-sm font-medium"
+                style={{ color: "oklch(var(--muted-foreground))" }}
+              >
+                <span
+                  className="inline-block w-2 h-2 rounded-full mr-2 align-middle"
+                  style={{ backgroundColor: "oklch(var(--success))" }}
+                />
+                Trusted by users worldwide • Built for secure and consistent
+                savings
+              </p>
             </motion.div>
 
             {/* Right illustration */}
-            <div className="flex-1 w-full lg:max-w-sm xl:max-w-md">
+            <div className="flex-1 w-full lg:max-w-sm xl:max-w-md pb-8">
               <DashboardIllustration />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust strip — white bg */}
-      <section className="bg-white border-b border-border">
+      {/* Trust badge strip — white bg */}
+      <section className="bg-white border-y border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {trustItems.map(({ icon: Icon, title, desc }) => (
+            {trustBadges.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
                 className="flex flex-col items-center text-center gap-3"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: "oklch(var(--navy) / 0.08)" }}
+                  style={{ backgroundColor: "oklch(var(--navy) / 0.07)" }}
                 >
                   <Icon size={22} style={{ color: "oklch(var(--navy))" }} />
                 </div>
@@ -318,13 +408,61 @@ export function Home() {
         </div>
       </section>
 
-      {/* How It Works — light gray bg */}
-      <section id="how-it-works" className="px-4 sm:px-6 py-20 bg-muted/60">
+      {/* Security section — light gray bg */}
+      <section className="px-4 sm:px-6 py-20 bg-background">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "oklch(var(--success))" }}
+            >
+              Security First
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+              Your financial security is our top priority.
+            </h2>
+            <p className="text-muted-foreground text-base max-w-md mx-auto">
+              Every aspect of MTVault is built around protecting your savings
+              and giving you complete peace of mind.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {securityCards.map(({ icon: Icon, title, desc }, i) => (
+              <motion.div
+                key={title}
+                className="bg-white rounded-2xl border border-border shadow-card p-6 space-y-4 hover:shadow-card-hover transition-all hover:-translate-y-1"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ backgroundColor: "oklch(var(--navy) / 0.07)" }}
+                >
+                  <Icon size={22} style={{ color: "oklch(var(--navy))" }} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground text-lg mb-1.5">
+                    {title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works — white bg */}
+      <section id="how-it-works" className="px-4 sm:px-6 py-20 bg-white">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <p
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "oklch(var(--primary))" }}
+              style={{ color: "oklch(var(--navy))" }}
             >
               Simple Process
             </p>
@@ -332,24 +470,26 @@ export function Home() {
               How It Works
             </h2>
             <p className="text-muted-foreground text-base max-w-md mx-auto">
-              Three simple steps to start saving with intention.
+              Simple, transparent, and built for everyday use.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {steps.map(({ num, icon: Icon, title, desc }, i) => (
               <motion.div
                 key={num}
-                className="rounded-2xl p-7 space-y-5 relative overflow-hidden"
-                style={{ backgroundColor: "oklch(var(--navy) / 0.88)" }}
+                className="rounded-2xl p-7 space-y-5 relative overflow-hidden text-white"
+                style={{ backgroundColor: "oklch(var(--navy))" }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                {/* Number badge */}
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-extrabold text-white"
-                  style={{ backgroundColor: "oklch(var(--primary))" }}
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-extrabold"
+                  style={{
+                    backgroundColor: "oklch(var(--success))",
+                    color: "white",
+                  }}
                 >
                   {num}
                 </div>
@@ -364,24 +504,20 @@ export function Home() {
                     {desc}
                   </p>
                 </div>
-                {/* Decorative circle */}
-                <div
-                  className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full opacity-10"
-                  style={{ backgroundColor: "oklch(var(--primary))" }}
-                />
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full opacity-10 bg-white" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features — white bg */}
-      <section id="features" className="px-4 sm:px-6 py-20 bg-white">
+      {/* Features — light gray bg */}
+      <section id="features" className="px-4 sm:px-6 py-20 bg-background">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-2">
             <p
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "oklch(var(--primary))" }}
+              style={{ color: "oklch(var(--navy))" }}
             >
               Platform Features
             </p>
@@ -389,15 +525,14 @@ export function Home() {
               Everything You Need
             </h2>
             <p className="text-muted-foreground text-base max-w-md mx-auto">
-              Built for consistent saving, flexible access, and full
-              transparency.
+              Designed to give you full control of your savings.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map(({ icon: Icon, title, desc }, i) => (
               <motion.div
                 key={title}
-                className="bg-white rounded-2xl border border-border shadow-card p-6 space-y-4 hover:shadow-card-hover transition-shadow"
+                className="bg-white rounded-2xl border border-border shadow-card p-6 space-y-4 hover:shadow-card-hover hover:-translate-y-1 transition-all"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -423,31 +558,36 @@ export function Home() {
         </div>
       </section>
 
-      {/* CTA banner — light gray */}
-      <section className="px-4 sm:px-6 py-20 bg-muted/60">
+      {/* CTA banner — navy */}
+      <section
+        className="px-4 sm:px-6 py-20"
+        style={{ backgroundColor: "oklch(var(--navy))" }}
+      >
         <div className="max-w-2xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Ready to start saving in USD?
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            Ready to grow your savings?
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Join the KyleVault demo and explore a premium savings experience.
+          <p className="text-white/70 text-lg">
+            Join the MTVault demo and explore a premium savings experience built
+            for trust and transparency.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/signup">
+            <Link to="/dashboard">
               <Button
                 size="lg"
-                className="rounded-full gap-2 shadow-cta font-semibold px-8 text-white"
-                style={{ backgroundColor: "oklch(var(--primary))" }}
+                className="rounded-full gap-2 font-semibold px-8 bg-white hover:bg-white/90"
+                style={{ color: "oklch(var(--navy))" }}
                 data-ocid="cta.primary_button"
               >
-                Create Free Account <ArrowRight size={16} />
+                Get Started <ArrowRight size={16} />
               </Button>
             </Link>
             <Link to="/savings-plans">
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full gap-2 font-semibold px-8"
+                className="rounded-full gap-2 font-semibold px-8 border-white/30 text-white hover:bg-white/10"
+                style={{ backgroundColor: "transparent" }}
                 data-ocid="cta.secondary_button"
               >
                 View Plans
@@ -463,12 +603,12 @@ export function Home() {
       <div
         className="fixed bottom-0 left-0 right-0 z-50 py-2 px-4 text-center"
         style={{
-          backgroundColor: "oklch(var(--navy) / 0.95)",
+          backgroundColor: "oklch(var(--navy) / 0.96)",
           backdropFilter: "blur(8px)",
         }}
       >
         <p className="text-xs text-white/70">
-          <span className="font-semibold text-white">Demo only:</span> KyleVault
+          <span className="font-semibold text-white">Demo only:</span> MTVault
           is a concept demo and does not hold or manage real funds.
         </p>
       </div>

@@ -28,7 +28,7 @@ const transactions = [
     date: "Mar 25, 2026",
     type: "Deposit",
     description: "Bank Transfer",
-    amount: "+$500.00",
+    amount: "+$800.00",
     status: "Completed",
     positive: true,
   },
@@ -37,7 +37,7 @@ const transactions = [
     date: "Mar 22, 2026",
     type: "Withdrawal",
     description: "Personal Transfer",
-    amount: "-$200.00",
+    amount: "-$350.00",
     status: "Completed",
     positive: false,
   },
@@ -46,7 +46,7 @@ const transactions = [
     date: "Mar 18, 2026",
     type: "Interest Earned",
     description: "Monthly Interest",
-    amount: "+$12.50",
+    amount: "+$18.50",
     status: "Completed",
     positive: true,
   },
@@ -55,7 +55,7 @@ const transactions = [
     date: "Mar 15, 2026",
     type: "Deposit",
     description: "Round-Up Savings",
-    amount: "+$75.00",
+    amount: "+$125.00",
     status: "Completed",
     positive: true,
   },
@@ -64,7 +64,7 @@ const transactions = [
     date: "Mar 10, 2026",
     type: "Withdrawal",
     description: "Emergency Fund",
-    amount: "-$300.00",
+    amount: "-$400.00",
     status: "Completed",
     positive: false,
   },
@@ -73,7 +73,7 @@ const transactions = [
     date: "Mar 05, 2026",
     type: "Deposit",
     description: "Paycheck Allocation",
-    amount: "+$1,000.00",
+    amount: "+$1,500.00",
     status: "Completed",
     positive: true,
   },
@@ -82,7 +82,7 @@ const transactions = [
     date: "Feb 28, 2026",
     type: "Deposit",
     description: "Bank Transfer",
-    amount: "+$250.00",
+    amount: "+$500.00",
     status: "Pending",
     positive: true,
   },
@@ -92,11 +92,27 @@ export function Dashboard() {
   const { user } = useAuth();
   const [modal, setModal] = useState<"deposit" | "withdraw" | null>(null);
 
-  const firstName = user?.name?.split(" ")[0] ?? "Kyle";
+  const firstName = user?.name?.split(" ")[0] ?? "John";
 
   return (
     <AppShell>
       <div className="space-y-5 animate-fade-in pb-16">
+        {/* Header */}
+        <div>
+          <p
+            className="text-xs font-semibold uppercase tracking-widest mb-1"
+            style={{ color: "oklch(var(--success))" }}
+          >
+            Your money, clearly tracked and always accessible.
+          </p>
+          <h1 className="text-2xl font-bold text-foreground">
+            Welcome Back, {firstName}!
+          </h1>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            Here's an overview of your savings activity.
+          </p>
+        </div>
+
         {/* Demo disclaimer banner */}
         <div
           className="flex items-start gap-3 rounded-2xl px-4 py-3.5"
@@ -112,18 +128,8 @@ export function Dashboard() {
             style={{ color: "oklch(var(--navy))" }}
           />
           <p className="text-sm" style={{ color: "oklch(var(--navy))" }}>
-            <span className="font-semibold">⚠️ Demo Mode:</span> KyleVault is a
+            <span className="font-semibold">⚠️ Demo Mode:</span> MTVault is a
             demo concept platform. No real funds are held or processed.
-          </p>
-        </div>
-
-        {/* Greeting */}
-        <div>
-          <h1 className="text-2xl font-bold text-foreground">
-            Welcome Back, {firstName}!
-          </h1>
-          <p className="text-sm text-muted-foreground mt-0.5">
-            Here's an overview of your savings activity.
           </p>
         </div>
 
@@ -143,7 +149,7 @@ export function Dashboard() {
                 <Wallet size={16} className="text-white" />
               </div>
             </div>
-            <p className="text-4xl font-extrabold">$2,450.00</p>
+            <p className="text-4xl font-extrabold">$3,200.00</p>
             <p className="text-xs text-white/60">Available funds</p>
           </div>
 
@@ -164,7 +170,7 @@ export function Dashboard() {
               </div>
             </div>
             <p className="text-3xl font-extrabold text-foreground">
-              $12,340.00
+              $18,450.00
             </p>
             <p className="text-xs text-muted-foreground">Across all plans</p>
           </div>
@@ -189,7 +195,7 @@ export function Dashboard() {
               </div>
             </div>
             <p className="text-2xl font-extrabold text-foreground">
-              Weekly Savings
+              30-Day Locked
             </p>
             <p className="text-xs text-muted-foreground">Currently active</p>
           </div>
@@ -199,7 +205,7 @@ export function Dashboard() {
         <div className="flex gap-3 flex-wrap">
           <Button
             className="rounded-full gap-2 text-white font-semibold px-6 shadow-cta"
-            style={{ backgroundColor: "oklch(var(--primary))" }}
+            style={{ backgroundColor: "oklch(var(--navy))" }}
             onClick={() => setModal("deposit")}
             data-ocid="dashboard.deposit.button"
           >
@@ -224,9 +230,9 @@ export function Dashboard() {
             Savings Goal Progress
           </h2>
           <ProgressBar
-            value={68}
+            value={65}
             label="Save $5,000 by Dec 2026"
-            sublabel="$3,400.00 / $5,000.00"
+            sublabel="$3,250.00 / $5,000.00"
           />
         </div>
 

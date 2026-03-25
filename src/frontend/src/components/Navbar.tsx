@@ -12,6 +12,7 @@ import {
   LogOut,
   Menu,
   PiggyBank,
+  Shield,
   User,
   X,
 } from "lucide-react";
@@ -34,10 +35,16 @@ export function Navbar() {
         .join("")
         .slice(0, 2)
         .toUpperCase()
-    : "KJ";
+    : "JD";
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-xs">
+    <header
+      className="sticky top-0 z-50 border-b"
+      style={{
+        backgroundColor: "oklch(var(--navy))",
+        borderColor: "rgba(255,255,255,0.1)",
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link
@@ -45,17 +52,11 @@ export function Navbar() {
           className="flex items-center gap-2.5 shrink-0"
           data-ocid="nav.link"
         >
-          <div
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-navy-foreground font-bold text-sm"
-            style={{ backgroundColor: "oklch(var(--navy))" }}
-          >
-            KV
+          <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center">
+            <Shield size={16} className="text-white" />
           </div>
-          <span
-            className="font-bold text-lg tracking-tight"
-            style={{ color: "oklch(var(--navy))" }}
-          >
-            KyleVault
+          <span className="font-bold text-lg tracking-tight text-white">
+            MTVault
           </span>
         </Link>
 
@@ -64,19 +65,19 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-6 mx-auto">
             <a
               href="/#features"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-white/70 hover:text-white transition-colors"
             >
               Features
             </a>
             <a
               href="/#how-it-works"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-white/70 hover:text-white transition-colors"
             >
               How It Works
             </a>
             <Link
               to="/savings-plans"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-white/70 hover:text-white transition-colors"
               data-ocid="nav.link"
             >
               Plans
@@ -86,21 +87,21 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-6 mx-auto">
             <Link
               to="/dashboard"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
+              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
               data-ocid="nav.link"
             >
               <LayoutDashboard size={14} /> Dashboard
             </Link>
             <Link
               to="/savings-plans"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
+              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
               data-ocid="nav.link"
             >
               <PiggyBank size={14} /> Plans
             </Link>
             <Link
               to="/profile"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5"
+              className="text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
               data-ocid="nav.link"
             >
               <User size={14} /> Profile
@@ -116,23 +117,20 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="hidden sm:flex text-sm font-medium"
+                  className="hidden sm:flex text-sm font-medium text-white/80 hover:text-white hover:bg-white/10"
                   data-ocid="nav.login.button"
                 >
-                  Sign In
+                  Login
                 </Button>
               </Link>
               <Link to="/signup">
                 <Button
                   size="sm"
-                  className="rounded-full text-sm font-semibold px-5 text-navy-foreground"
-                  style={{
-                    backgroundColor: "oklch(var(--navy))",
-                    color: "white",
-                  }}
+                  className="rounded-full text-sm font-semibold px-5 bg-white hover:bg-white/90"
+                  style={{ color: "oklch(var(--navy))" }}
                   data-ocid="nav.signup.button"
                 >
-                  Open Account
+                  Get Started
                 </Button>
               </Link>
             </>
@@ -142,18 +140,15 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 hover:bg-white/10"
                   data-ocid="nav.user.button"
                 >
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-navy-foreground"
-                    style={{ backgroundColor: "oklch(var(--navy))" }}
-                  >
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                     <span className="text-white text-xs font-semibold">
                       {initials}
                     </span>
                   </div>
-                  <span className="hidden sm:inline text-sm font-medium">
+                  <span className="hidden sm:inline text-sm font-medium text-white">
                     {user?.name.split(" ")[0]}
                   </span>
                 </Button>
@@ -182,7 +177,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="md:hidden text-white hover:bg-white/10"
             onClick={() => setMobileOpen(!mobileOpen)}
             data-ocid="nav.mobile.toggle"
           >
@@ -193,24 +188,24 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white px-4 py-3 flex flex-col gap-3">
+        <div
+          className="md:hidden border-t px-4 py-3 flex flex-col gap-3"
+          style={{
+            backgroundColor: "oklch(var(--navy))",
+            borderColor: "rgba(255,255,255,0.1)",
+          }}
+        >
           {!isLoggedIn ? (
             <>
-              <a
-                href="/#features"
-                className="text-sm text-muted-foreground py-1"
-              >
+              <a href="/#features" className="text-sm text-white/70 py-1">
                 Features
               </a>
-              <a
-                href="/#how-it-works"
-                className="text-sm text-muted-foreground py-1"
-              >
+              <a href="/#how-it-works" className="text-sm text-white/70 py-1">
                 How It Works
               </a>
               <Link
                 to="/savings-plans"
-                className="text-sm text-muted-foreground py-1"
+                className="text-sm text-white/70 py-1"
                 onClick={() => setMobileOpen(false)}
                 data-ocid="nav.link"
               >
@@ -225,10 +220,10 @@ export function Navbar() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full"
+                    className="w-full border-white/30 text-white bg-transparent hover:bg-white/10"
                     data-ocid="mobile.login.button"
                   >
-                    Sign In
+                    Login
                   </Button>
                 </Link>
                 <Link
@@ -238,11 +233,11 @@ export function Navbar() {
                 >
                   <Button
                     size="sm"
-                    className="w-full rounded-full text-white"
-                    style={{ backgroundColor: "oklch(var(--navy))" }}
+                    className="w-full rounded-full bg-white hover:bg-white/90"
+                    style={{ color: "oklch(var(--navy))" }}
                     data-ocid="mobile.signup.button"
                   >
-                    Open Account
+                    Get Started
                   </Button>
                 </Link>
               </div>
@@ -251,7 +246,7 @@ export function Navbar() {
             <>
               <Link
                 to="/dashboard"
-                className="text-sm text-muted-foreground py-1"
+                className="text-sm text-white/70 py-1"
                 onClick={() => setMobileOpen(false)}
                 data-ocid="nav.link"
               >
@@ -259,7 +254,7 @@ export function Navbar() {
               </Link>
               <Link
                 to="/savings-plans"
-                className="text-sm text-muted-foreground py-1"
+                className="text-sm text-white/70 py-1"
                 onClick={() => setMobileOpen(false)}
                 data-ocid="nav.link"
               >
@@ -267,7 +262,7 @@ export function Navbar() {
               </Link>
               <Link
                 to="/profile"
-                className="text-sm text-muted-foreground py-1"
+                className="text-sm text-white/70 py-1"
                 onClick={() => setMobileOpen(false)}
                 data-ocid="nav.link"
               >
@@ -279,7 +274,7 @@ export function Navbar() {
                   handleLogout();
                   setMobileOpen(false);
                 }}
-                className="text-sm text-destructive text-left py-1"
+                className="text-sm text-red-300 text-left py-1"
                 data-ocid="mobile.logout.button"
               >
                 Logout

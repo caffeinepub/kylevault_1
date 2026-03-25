@@ -1,18 +1,17 @@
-# KyleVault
+# MTVault
 
 ## Current State
-New project — no existing files.
+New project — no existing application files.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Full React SPA with React Router for multi-page navigation
-- Landing page: hero, trust/security strip, how it works, features section, footer with disclaimer
-- Dashboard page: wallet balance card ($2,450.00), total saved, active plan, deposit/withdraw buttons, transaction history table, savings progress bar
-- Savings Plans page: Daily ($10–$100), Weekly, 30-Day Locked — each with amount, duration, demo progress bar
-- User Profile page: mock subdomain display (username.kylevault.com), account details
-- Disclaimer banner in footer and dashboard: demo-only notice
-- Login/Signup modal or page (UI only, no real auth)
+- Full MTVault brand (renamed from KyleVault concept)
+- Homepage with hero ("Secure Your Money. Grow with Confidence."), trust strip, security section, how it works, features section
+- Dashboard page: $3,200.00 wallet balance, total saved, active plan, deposit/withdraw buttons, transaction history, savings progress bar
+- Savings Plans page: Daily ($10–$100), Weekly, 30-Day Locked — each with amount, duration, demo progress
+- User Profile page with mock subdomain UI (username.mtvault.com)
+- Prominent disclaimer throughout: demo only, no real funds
 
 ### Modify
 - N/A (new project)
@@ -21,10 +20,10 @@ New project — no existing files.
 - N/A
 
 ## Implementation Plan
-1. Scaffold React app with React Router, Tailwind CSS
-2. Build shared components: Navbar, Footer (with disclaimer), layout wrapper
-3. Build Landing page with all sections
-4. Build Dashboard page with mock data (USD)
-5. Build Savings Plans page
-6. Build User Profile page
-7. Add smooth transitions and responsive mobile layout
+1. React SPA with React Router for page navigation (Home, Dashboard, Plans, Profile)
+2. Homepage: NavBar, Hero section with CTAs, Trust badge strip, Security section with icons, How It Works 3-step, Features grid, Footer with disclaimer
+3. Dashboard: balance cards, deposit/withdraw modal buttons, transaction history list, savings progress bar
+4. Savings Plans: 3 plan cards with progress bars, amounts, durations
+5. Profile: mock subdomain display, user info card
+6. Deep navy (#0B2342) + white + soft gray (#F4F7FB) design system throughout
+7. Mobile responsive with smooth animations

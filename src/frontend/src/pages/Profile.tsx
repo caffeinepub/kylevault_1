@@ -12,10 +12,10 @@ export function Profile() {
   const [modalOpen, setModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const displayName = user?.name ?? "Kyle Johnson";
-  const displayEmail = user?.email ?? "kyle.johnson@kylevault.com";
+  const displayName = user?.name ?? "John Doe";
+  const displayEmail = user?.email ?? "johndoe@mtvault.com";
   const slug = displayName.toLowerCase().replace(/\s+/g, "");
-  const profileUrl = `${slug}.kylevault.com`;
+  const profileUrl = `${slug}.mtvault.com`;
   const initials = displayName
     .split(" ")
     .map((n) => n[0])
@@ -33,9 +33,15 @@ export function Profile() {
     <AppShell>
       <div className="space-y-5 animate-fade-in pb-16 max-w-2xl">
         <div>
+          <p
+            className="text-xs font-semibold uppercase tracking-widest mb-1"
+            style={{ color: "oklch(var(--success))" }}
+          >
+            Your Account
+          </p>
           <h1 className="text-2xl font-bold text-foreground">Profile</h1>
           <p className="text-sm text-muted-foreground mt-0.5">
-            Manage your account information.
+            Manage your MTVault account information.
           </p>
         </div>
 
@@ -47,7 +53,7 @@ export function Profile() {
         >
           <div
             className="w-20 h-20 rounded-full flex items-center justify-center shrink-0 text-2xl font-bold text-white"
-            style={{ backgroundColor: "oklch(var(--primary))" }}
+            style={{ backgroundColor: "oklch(var(--success))" }}
           >
             {initials}
           </div>
@@ -94,10 +100,19 @@ export function Profile() {
             </div>
           </div>
 
-          {/* Profile URL */}
+          {/* Profile URL / mock subdomain */}
           <div className="space-y-1.5">
             <Label className="flex items-center gap-1.5">
-              <Globe size={13} /> Your Savings Link
+              <Globe size={13} /> Your MTVault Link
+              <span
+                className="ml-1 text-xs font-normal px-2 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: "oklch(var(--navy) / 0.08)",
+                  color: "oklch(var(--navy))",
+                }}
+              >
+                UI Demo Only
+              </span>
             </Label>
             <div className="flex gap-2">
               <Input
@@ -121,7 +136,8 @@ export function Profile() {
               </Button>
             </div>
             <p className="text-xs text-muted-foreground">
-              Mock subdomain for demo — UI only.
+              Mock subdomain for UI demo — not a real URL. Example:
+              johndoe.mtvault.com
             </p>
           </div>
 
@@ -155,16 +171,16 @@ export function Profile() {
             <div className="bg-muted/40 rounded-xl border border-border p-4 text-center">
               <p
                 className="text-3xl font-extrabold"
-                style={{ color: "oklch(var(--primary))" }}
+                style={{ color: "oklch(var(--success))" }}
               >
-                68%
+                65%
               </p>
               <p className="text-xs text-muted-foreground mt-1">Savings Rate</p>
             </div>
             <div className="bg-muted/40 rounded-xl border border-border p-4 text-center">
               <p
                 className="text-3xl font-extrabold"
-                style={{ color: "oklch(var(--success))" }}
+                style={{ color: "oklch(var(--navy))" }}
               >
                 3
               </p>

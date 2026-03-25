@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/context/AuthContext";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2, Shield } from "lucide-react";
 import { useState } from "react";
 
 export function Login() {
@@ -31,22 +31,22 @@ export function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-muted/30 flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md bg-white rounded-2xl border border-border shadow-card p-8 space-y-6 animate-fade-in">
           <div className="space-y-1 text-center">
             <div className="flex justify-center mb-4">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
                 style={{ backgroundColor: "oklch(var(--navy))" }}
               >
-                KV
+                <Shield size={24} className="text-white" />
               </div>
             </div>
             <h1 className="text-2xl font-bold text-foreground">Welcome Back</h1>
             <p className="text-sm text-muted-foreground">
-              Sign in to your KyleVault account
+              Sign in to your MTVault account
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export function Login() {
               <Input
                 id="email"
                 type="email"
-                placeholder="kyle@example.com"
+                placeholder="john@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 data-ocid="login.input"
@@ -112,14 +112,14 @@ export function Login() {
           </form>
 
           <p className="text-center text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               to="/signup"
               className="font-semibold hover:underline"
-              style={{ color: "oklch(var(--primary))" }}
+              style={{ color: "oklch(var(--navy))" }}
               data-ocid="login.signup.link"
             >
-              Open Account
+              Get Started
             </Link>
           </p>
 

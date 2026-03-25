@@ -13,66 +13,65 @@
   :root {
     --radius: 0.875rem;
 
-    /* === KyleVault Premium Fintech Palette === */
-    /* White page base */
-    --background: 1 0 0;
-    /* Dark text #0F172A */
-    --foreground: 0.13 0.03 265;
+    /* === MTVault Premium Fintech Palette === */
+    /* Page background: #F4F7FB (pale blue-gray) */
+    --background: 0.97 0.008 245;
+    /* Primary text: #0B1220 near-black */
+    --foreground: 0.13 0.022 255;
 
-    /* Card = white */
+    /* Cards = white */
     --card: 1 0 0;
-    --card-foreground: 0.13 0.03 265;
+    --card-foreground: 0.13 0.022 255;
     --popover: 1 0 0;
-    --popover-foreground: 0.13 0.03 265;
+    --popover-foreground: 0.13 0.022 255;
 
-    /* Primary CTA = bright blue #2F80ED */
-    --primary: 0.58 0.2 258;
+    /* Primary = deep navy #0B2342 */
+    --primary: 0.2 0.065 255;
     --primary-foreground: 1 0 0;
 
     /* Secondary = light gray */
-    --secondary: 0.97 0.006 240;
-    --secondary-foreground: 0.13 0.03 265;
+    --secondary: 0.96 0.008 245;
+    --secondary-foreground: 0.13 0.022 255;
 
-    /* Section bg = #F3F6F9 */
-    --muted: 0.972 0.006 240;
-    --muted-foreground: 0.5 0.01 265;
+    /* Muted = slightly off-white gray sections */
+    --muted: 0.965 0.008 245;
+    --muted-foreground: 0.48 0.015 250;
 
-    /* Accent = pale blue-gray #E6EEF5 */
-    --accent: 0.945 0.017 234;
-    --accent-foreground: 0.24 0.07 235;
+    /* Accent = soft pale blue */
+    --accent: 0.94 0.018 245;
+    --accent-foreground: 0.2 0.065 255;
 
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 1 0 0;
 
-    /* Borders = #E5E7EB */
-    --border: 0.925 0.005 258;
-    --input: 0.925 0.005 258;
-    --ring: 0.58 0.2 258;
+    /* Borders: #D7DFEA */
+    --border: 0.89 0.015 245;
+    --input: 0.89 0.015 245;
+    --ring: 0.2 0.065 255;
 
-    /* Deep navy #0B3A57 */
-    --navy: 0.24 0.07 235;
+    /* Deep navy #0B2342 */
+    --navy: 0.2 0.065 255;
     --navy-foreground: 1 0 0;
-    /* Slightly lighter navy for cards on navy bg */
-    --navy-card: 0.28 0.065 235;
+    --navy-card: 0.24 0.06 255;
 
-    /* Success green #16A34A */
-    --success: 0.53 0.16 150;
+    /* Success green #1F9D6A */
+    --success: 0.58 0.17 160;
     --success-foreground: 1 0 0;
 
-    --chart-1: 0.58 0.2 258;
-    --chart-2: 0.53 0.16 150;
+    --chart-1: 0.2 0.065 255;
+    --chart-2: 0.58 0.17 160;
     --chart-3: 0.398 0.07 227;
     --chart-4: 0.828 0.189 84;
     --chart-5: 0.769 0.188 70;
 
     --sidebar: 1 0 0;
-    --sidebar-foreground: 0.13 0.03 265;
-    --sidebar-primary: 0.58 0.2 258;
+    --sidebar-foreground: 0.13 0.022 255;
+    --sidebar-primary: 0.2 0.065 255;
     --sidebar-primary-foreground: 1 0 0;
-    --sidebar-accent: 0.945 0.017 234;
-    --sidebar-accent-foreground: 0.58 0.2 258;
-    --sidebar-border: 0.925 0.005 258;
-    --sidebar-ring: 0.58 0.2 258;
+    --sidebar-accent: 0.94 0.018 245;
+    --sidebar-accent-foreground: 0.2 0.065 255;
+    --sidebar-border: 0.89 0.015 245;
+    --sidebar-ring: 0.2 0.065 255;
   }
 
   * {

@@ -87,9 +87,9 @@ export default {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        card: "0 2px 16px 0 rgba(11,58,87,0.08), 0 1px 3px 0 rgba(0,0,0,0.06)",
-        "card-hover": "0 6px 28px 0 rgba(11,58,87,0.14), 0 2px 6px 0 rgba(0,0,0,0.08)",
-        "cta": "0 4px 20px 0 rgba(47,128,237,0.4)",
+        card: "0 6px 18px 0 rgba(15,23,42,0.08), 0 1px 3px 0 rgba(0,0,0,0.04)",
+        "card-hover": "0 10px 32px 0 rgba(11,35,66,0.14), 0 2px 6px 0 rgba(0,0,0,0.06)",
+        cta: "0 4px 20px 0 rgba(11,35,66,0.35)",
       },
       keyframes: {
         "accordion-down": {

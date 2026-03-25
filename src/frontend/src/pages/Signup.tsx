@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/context/AuthContext";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2, Shield } from "lucide-react";
 import { useState } from "react";
 
 export function Signup() {
@@ -50,24 +50,24 @@ export function Signup() {
   };
 
   return (
-    <div className="min-h-screen bg-muted/30 flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md bg-white rounded-2xl border border-border shadow-card p-8 space-y-6 animate-fade-in">
           <div className="space-y-1 text-center">
             <div className="flex justify-center mb-4">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
                 style={{ backgroundColor: "oklch(var(--navy))" }}
               >
-                KV
+                <Shield size={24} className="text-white" />
               </div>
             </div>
             <h1 className="text-2xl font-bold text-foreground">
               Open Your Account
             </h1>
             <p className="text-sm text-muted-foreground">
-              Start your savings journey with KyleVault
+              Start your savings journey with MTVault
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export function Signup() {
               <Label htmlFor="name">Full Name</Label>
               <Input
                 id="name"
-                placeholder="Kyle Johnson"
+                placeholder="John Doe"
                 value={form.name}
                 onChange={set("name")}
                 data-ocid="signup.name.input"
@@ -95,7 +95,7 @@ export function Signup() {
               <Input
                 id="signup-email"
                 type="email"
-                placeholder="kyle@example.com"
+                placeholder="john@example.com"
                 value={form.email}
                 onChange={set("email")}
                 data-ocid="signup.input"
@@ -180,7 +180,7 @@ export function Signup() {
             <Link
               to="/login"
               className="font-semibold hover:underline"
-              style={{ color: "oklch(var(--primary))" }}
+              style={{ color: "oklch(var(--navy))" }}
               data-ocid="signup.login.link"
             >
               Sign In
