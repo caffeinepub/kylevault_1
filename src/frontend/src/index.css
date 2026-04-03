@@ -3,82 +3,294 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
-  font-weight: 300 700;
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
   font-display: swap;
 }
 
 @layer base {
   :root {
-    --radius: 0.875rem;
+    --radius: 1.25rem;
 
-    /* === MTVault Premium Fintech Palette === */
-    /* Page background: #F4F7FB (pale blue-gray) */
-    --background: 0.97 0.008 245;
-    /* Primary text: #0B1220 near-black */
-    --foreground: 0.13 0.022 255;
+    /* === Kylure Luxury Dark Palette === */
+    /* Background: #080808 deep black */
+    --background: 0.07 0 0;
+    /* Foreground: #F2F0EA warm white */
+    --foreground: 0.95 0.007 85;
 
-    /* Cards = white */
-    --card: 1 0 0;
-    --card-foreground: 0.13 0.022 255;
-    --popover: 1 0 0;
-    --popover-foreground: 0.13 0.022 255;
+    /* Card bg: #141414 */
+    --card: 0.105 0 0;
+    --card-foreground: 0.95 0.007 85;
+    --popover: 0.105 0 0;
+    --popover-foreground: 0.95 0.007 85;
 
-    /* Primary = deep navy #0B2342 */
-    --primary: 0.2 0.065 255;
-    --primary-foreground: 1 0 0;
+    /* Primary = gold #C8A86A */
+    --primary: 0.742 0.092 78;
+    --primary-foreground: 0.07 0 0;
 
-    /* Secondary = light gray */
-    --secondary: 0.96 0.008 245;
-    --secondary-foreground: 0.13 0.022 255;
+    /* Secondary = dark surface #1A1A1A */
+    --secondary: 0.13 0 0;
+    --secondary-foreground: 0.95 0.007 85;
 
-    /* Muted = slightly off-white gray sections */
-    --muted: 0.965 0.008 245;
-    --muted-foreground: 0.48 0.015 250;
+    /* Muted = #9A9A9A */
+    --muted: 0.13 0 0;
+    --muted-foreground: 0.65 0 0;
 
-    /* Accent = soft pale blue */
-    --accent: 0.94 0.018 245;
-    --accent-foreground: 0.2 0.065 255;
+    /* Accent = gold dim */
+    --accent: 0.15 0 0;
+    --accent-foreground: 0.742 0.092 78;
 
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 1 0 0;
 
-    /* Borders: #D7DFEA */
-    --border: 0.89 0.015 245;
-    --input: 0.89 0.015 245;
-    --ring: 0.2 0.065 255;
+    /* Border: gold dim rgba(200,168,106,0.3) */
+    --border: 0.2 0 0;
+    --input: 0.2 0 0;
+    --ring: 0.742 0.092 78;
 
-    /* Deep navy #0B2342 */
-    --navy: 0.2 0.065 255;
-    --navy-foreground: 1 0 0;
-    --navy-card: 0.24 0.06 255;
+    /* Gold token */
+    --gold: 0.742 0.092 78;
+    --gold-dim: 0.742 0.092 78;
 
-    /* Success green #1F9D6A */
-    --success: 0.58 0.17 160;
-    --success-foreground: 1 0 0;
+    --chart-1: 0.742 0.092 78;
+    --chart-2: 0.65 0 0;
+    --chart-3: 0.4 0 0;
+    --chart-4: 0.25 0 0;
+    --chart-5: 0.15 0 0;
 
-    --chart-1: 0.2 0.065 255;
-    --chart-2: 0.58 0.17 160;
-    --chart-3: 0.398 0.07 227;
-    --chart-4: 0.828 0.189 84;
-    --chart-5: 0.769 0.188 70;
-
-    --sidebar: 1 0 0;
-    --sidebar-foreground: 0.13 0.022 255;
-    --sidebar-primary: 0.2 0.065 255;
-    --sidebar-primary-foreground: 1 0 0;
-    --sidebar-accent: 0.94 0.018 245;
-    --sidebar-accent-foreground: 0.2 0.065 255;
-    --sidebar-border: 0.89 0.015 245;
-    --sidebar-ring: 0.2 0.065 255;
+    --sidebar: 0.105 0 0;
+    --sidebar-foreground: 0.95 0.007 85;
+    --sidebar-primary: 0.742 0.092 78;
+    --sidebar-primary-foreground: 0.07 0 0;
+    --sidebar-accent: 0.13 0 0;
+    --sidebar-accent-foreground: 0.95 0.007 85;
+    --sidebar-border: 0.2 0 0;
+    --sidebar-ring: 0.742 0.092 78;
   }
 
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: #080808;
+    color: #f2f0ea;
+  }
+}
+
+/* Kylure custom styles */
+.font-serif {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+.kylure-gold {
+  color: #c8a86a;
+}
+
+.kylure-gold-border {
+  border-color: rgba(200, 168, 106, 0.35);
+}
+
+.kylure-card {
+  background-color: #141414;
+  border: 1px solid rgba(200, 168, 106, 0.3);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.kylure-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(200, 168, 106, 0.65);
+  box-shadow: 0 8px 40px rgba(200, 168, 106, 0.12);
+}
+
+.kylure-btn {
+  border: 1px solid #c8a86a;
+  color: #c8a86a;
+  background: transparent;
+  border-radius: 9999px;
+  padding: 0.625rem 1.75rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.kylure-btn:hover {
+  background-color: #c8a86a;
+  color: #080808;
+}
+
+.kylure-btn-whatsapp {
+  border: 1px solid #c8a86a;
+  color: #c8a86a;
+  background: transparent;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.kylure-btn-whatsapp:hover {
+  background-color: #c8a86a;
+  color: #080808;
+}
+
+.kylure-whatsapp-contact {
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.kylure-whatsapp-contact:hover {
+  background-color: #1dba57;
+  transform: scale(1.03);
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.divider-gold {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8a86a, transparent);
+  margin: 0 auto;
+}
+
+.nav-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.45) 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(200, 168, 106, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s
+    ease;
+  color: #9a9a9a;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  border-color: #c8a86a;
+  color: #c8a86a;
+  background-color: rgba(200, 168, 106, 0.08);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: #080808;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #c8a86a;
+}
+
+.product-img-wrapper {
+  height: 280px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #0d0d0d;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.kylure-card:hover .product-img-wrapper img {
+  transform: scale(1.04);
+}
+
+.feature-card {
+  background-color: #141414;
+  border: 1px solid rgba(200, 168, 106, 0.18);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(200, 168, 106, 0.45);
+  transform: translateY(-4px);
 }

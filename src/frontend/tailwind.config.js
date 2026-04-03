@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
+        playfair: ["Playfair Display", "Georgia", "serif"],
       },
       colors: {
         border: "oklch(var(--border))",
@@ -50,14 +52,8 @@ export default {
           DEFAULT: "oklch(var(--card))",
           foreground: "oklch(var(--card-foreground))",
         },
-        navy: {
-          DEFAULT: "oklch(var(--navy) / <alpha-value>)",
-          foreground: "oklch(var(--navy-foreground))",
-          card: "oklch(var(--navy-card) / <alpha-value>)",
-        },
-        success: {
-          DEFAULT: "oklch(var(--success) / <alpha-value>)",
-          foreground: "oklch(var(--success-foreground))",
+        gold: {
+          DEFAULT: "oklch(var(--gold) / <alpha-value>)",
         },
         chart: {
           1: "oklch(var(--chart-1))",
@@ -87,9 +83,9 @@ export default {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        card: "0 6px 18px 0 rgba(15,23,42,0.08), 0 1px 3px 0 rgba(0,0,0,0.04)",
-        "card-hover": "0 10px 32px 0 rgba(11,35,66,0.14), 0 2px 6px 0 rgba(0,0,0,0.06)",
-        cta: "0 4px 20px 0 rgba(11,35,66,0.35)",
+        card: "0 6px 18px 0 rgba(0,0,0,0.4)",
+        "card-hover": "0 12px 40px rgba(200,168,106,0.12)",
+        gold: "0 4px 20px rgba(200,168,106,0.25)",
       },
       keyframes: {
         "accordion-down": {
@@ -101,19 +97,22 @@ export default {
           to: { height: "0" },
         },
         "fade-in": {
-          from: { opacity: "0", transform: "translateY(16px)" },
+          from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        "fade-in-right": {
-          from: { opacity: "0", transform: "translateX(20px)" },
-          to: { opacity: "1", transform: "translateX(0)" },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(40px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out",
-        "fade-in-right": "fade-in-right 0.5s ease-out 0.15s both",
+        "fade-in": "fade-in 0.7s ease-out both",
+        "fade-in-delay": "fade-in 0.7s ease-out 0.2s both",
+        "fade-in-delay2": "fade-in 0.7s ease-out 0.4s both",
+        "fade-in-delay3": "fade-in 0.7s ease-out 0.6s both",
+        "fade-up": "fade-up 0.8s ease-out both",
       },
     },
   },

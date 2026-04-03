@@ -1,29 +1,31 @@
-# MTVault
+# Kylure — Luxury Perfume E-Commerce Website
 
 ## Current State
-New project — no existing application files.
+New project. No existing application files.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Full MTVault brand (renamed from KyleVault concept)
-- Homepage with hero ("Secure Your Money. Grow with Confidence."), trust strip, security section, how it works, features section
-- Dashboard page: $3,200.00 wallet balance, total saved, active plan, deposit/withdraw buttons, transaction history, savings progress bar
-- Savings Plans page: Daily ($10–$100), Weekly, 30-Day Locked — each with amount, duration, demo progress
-- User Profile page with mock subdomain UI (username.mtvault.com)
-- Prominent disclaimer throughout: demo only, no real funds
+- Full luxury e-commerce website for perfume brand "Kylure"
+- Navigation bar with brand logo/wordmark
+- Hero section: headline "Experience Luxury in Every Scent", subtext, trust line, "Shop Now" CTA button; black/gold cinematic background
+- Product grid section: 7 products (Oud Royale $89, Velour Noir $79, Amber Elixir $84, Imperial Gold $92, Silk Bloom $64, Aqua Veil $49, Spice Drift $58), each with image, name, USD price, description, and "Order on WhatsApp" button
+- WhatsApp order links: https://wa.me/2347039852428 with pre-filled messages per product
+- Features section: 4 features (Long-lasting, Premium quality, Affordable luxury, Fast delivery), with tagline
+- About section: brand story text
+- Contact section: WhatsApp button, contact info, social media icons
+- Footer with brand info and links
 
 ### Modify
 - N/A (new project)
 
 ### Remove
-- N/A
+- N/A (new project)
 
 ## Implementation Plan
-1. React SPA with React Router for page navigation (Home, Dashboard, Plans, Profile)
-2. Homepage: NavBar, Hero section with CTAs, Trust badge strip, Security section with icons, How It Works 3-step, Features grid, Footer with disclaimer
-3. Dashboard: balance cards, deposit/withdraw modal buttons, transaction history list, savings progress bar
-4. Savings Plans: 3 plan cards with progress bars, amounts, durations
-5. Profile: mock subdomain display, user info card
-6. Deep navy (#0B2342) + white + soft gray (#F4F7FB) design system throughout
-7. Mobile responsive with smooth animations
+1. Generate luxury perfume images for hero and all 7 products (black/gold aesthetic)
+2. Build React frontend with all sections
+3. Apply black, gold, white color scheme with serif/sans typography
+4. Implement smooth scroll animations
+5. Wire all WhatsApp order buttons with pre-filled messages to wa.me/2347039852428
+6. Ensure mobile responsiveness
